@@ -1,0 +1,44 @@
+{
+  "name": "textgrid-manage-module",
+  "version": 1,
+  "type": "macro",
+  "displayedName": "TextGrid - Manage tiers",
+  "author": "sdercolin",
+  "email": "sder.colin@gmail.com",
+  "description": "Add, remove, duplicate, or rename tiers. After changing, the modules will be sorted by name.",
+  "website": "https://github.com/sdercolin/vlabeler-textgrid",
+  "supportedLabelFileExtension": "TextGrid",
+  "parameters": {
+    "list": [
+      {
+        "type": "enum",
+        "name": "process",
+        "label": "Process",
+        "defaultValue": "rename",
+        "options": [
+          "rename",
+          "duplicate",
+          "add",
+          "remove"
+        ],
+        "optionDisplayedNames": [
+          "Rename current module",
+          "Duplicate current module",
+          "Add a new empty module",
+          "Remove current module"
+        ]
+      },
+      {
+        "type": "string",
+        "name": "newName",
+        "label": "New name",
+        "description": "Used for processes except `Remove current module`. Please keep the format of the module name: `<wav_file_name>.<index>.<tier_name>`.",
+        "defaultValue": "<foo.wav>_<index>_<tier_name>"
+      }
+    ]
+  },
+  "scope": "Project",
+  "scriptFiles": [
+    "textgrid-manage-module.js"
+  ]
+}
