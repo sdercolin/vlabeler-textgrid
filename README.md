@@ -3,6 +3,9 @@
 This repository contains a set of `labeler` and plugins for [vLabeler](https://github.com/sdercolin/vlabeler) to
 support [TextGrid](https://www.fon.hum.uva.nl/praat/manual/TextGrid.html) files.
 
+## Requirements
+`vLabeler` 1.0.0-beta3 or later.
+
 ## Contents
 
 - `labelers`
