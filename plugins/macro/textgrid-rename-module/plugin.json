@@ -1,0 +1,26 @@
+{
+  "name": "textgrid-rename-module",
+  "version": 1,
+  "type": "macro",
+  "displayedName": "TextGrid - Rename tier",
+  "author": "sdercolin",
+  "email": "sder.colin@gmail.com",
+  "description": "Rename current module to change the tier name. After changing, the modules will be sorted by name.",
+  "website": "https://github.com/sdercolin/vlabeler-textgrid",
+  "supportedLabelFileExtension": "TextGrid",
+  "parameters": {
+    "list": [
+      {
+        "type": "string",
+        "name": "newName",
+        "label": "New name",
+        "description": "Please keep the current format of the module name: `<wav_file_name>.<index>.<tier_name>`.",
+        "defaultValue": "<foo.wav>_<index>_<tier_name>"
+      }
+    ]
+  },
+  "scope": "Project",
+  "scriptFiles": [
+    "textgrid-rename-module.js"
+  ]
+}

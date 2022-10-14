@@ -1,0 +1,41 @@
+{
+  "name": "textgrid-mark-tier-relations",
+  "version": 1,
+  "type": "macro",
+  "displayedName": "TextGrid - Mark tier relations",
+  "author": "sdercolin",
+  "email": "sder.colin@gmail.com",
+  "description": "Mark tier relations as entry tags. This plugin aligns the boundaries between tiers, and add it's parent entry name to the tag of the child entries.",
+  "website": "https://github.com/sdercolin/vlabeler-textgrid",
+  "supportedLabelFileExtension": "TextGrid",
+  "parameters": {
+    "list": [
+      {
+        "type": "string",
+        "name": "repeater",
+        "label": "Repeat mark",
+        "description": "Text for indicating repetition of same text. You should make sure your texts don't contain this string.",
+        "defaultValue": "'"
+      },
+      {
+        "type": "string",
+        "name": "tiers",
+        "label": "Tier relations",
+        "description": "Enter your tier names in the order of their hierarchy for merging, separated by `>`. For example, if you have tiers `phoneme`, `word`, `sentence`, the input would be `phoneme>word>sentence`, indicating that entries in `phoneme` tier are children of entries in `word` tier, and so on. Please note that you cannot use `>` in your tier names, and the tier names should be unique.",
+        "defaultValue": ""
+      },
+      {
+        "type": "float",
+        "name": "tolerance",
+        "label": "Tolerance (ms)",
+        "description": "Tolerance for alignment in milliseconds.",
+        "defaultValue": 5,
+        "minValue": 0
+      }
+    ]
+  },
+  "scope": "Project",
+  "scriptFiles": [
+    "textgrid-mark-tier-relations.js"
+  ]
+}

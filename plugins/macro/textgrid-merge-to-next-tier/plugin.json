@@ -1,0 +1,40 @@
+{
+  "name": "textgrid-merge-to-next-tier",
+  "version": 1,
+  "type": "macro",
+  "displayedName": "TextGrid - Merge to update next tier",
+  "author": "sdercolin",
+  "email": "sder.colin@gmail.com",
+  "description": "Create or update the parent tier from the current module using the relation tags. To create tags, please use the `TextGrid - Mark tier relations` plugin.",
+  "website": "https://github.com/sdercolin/vlabeler-textgrid",
+  "supportedLabelFileExtension": "TextGrid",
+  "parameters": {
+    "list": [
+      {
+        "type": "string",
+        "name": "repeater",
+        "label": "Repeat mark",
+        "description": "Text for indicating repetition of same text. You should make sure your texts don't contain this string.",
+        "defaultValue": "'"
+      },
+      {
+        "type": "string",
+        "name": "targetTier",
+        "label": "Target tier",
+        "description": "The target tier name you want to create or update",
+        "defaultValue": ""
+      },
+      {
+        "type": "boolean",
+        "name": "forceUpdate",
+        "label": "Force update",
+        "description": "Update the target tier even if it has different content (mostly count, order and names of the entries) than the merged result. It's recommended to set this to false at first to get a report about the differences, and then set it to true if you are sure that the merged result is correct.",
+        "defaultValue": false
+      }
+    ]
+  },
+  "scope": "Project",
+  "scriptFiles": [
+    "textgrid-merge-to-next-tier.js"
+  ]
+}
