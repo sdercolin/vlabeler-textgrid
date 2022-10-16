@@ -27,6 +27,10 @@ See [Releases](https://github.com/sdercolin/vlabeler-textgrid/releases).
    Please backup your original TextGrid files before using the labeler if you have `PointTier` tiers.
 2. The labeler only recognize `.TextGrid` extension, so please rename your files if they have other extensions in prior.
 
+## Preview
+
+![](readme/textgrid-preview.png)
+
 ## Installation
 
 1. Open Menu `Settings` -> `Labelers...`
@@ -137,3 +141,12 @@ You can choose any of the following methods to export TextGrid files:
    file (if not existing, create as `<project>/TextGrid/<wavFileName>.TextGrid`).
 3. Menu `File` -> `Export Overwriting All`: Export all the TextGrid files in the project to the corresponding original
    TextGrid files.
+
+
+## Tips
+
+1. You can click the module name labels on the left side of the tier view to switch to another module.
+2. You can click any entry in the tier view to switch to that tier and jump to the entry.
+3. You can use menu `Navigate` -> `Go to Next/Previous Sub-project` to switch between tiers. You can also set the
+   keyboard shortcuts for these actions in the `Settings` -> `Preferences...` -> `Keymap` -> `Key actions` page.
+4. Dragging when multiple tiers exist will be snapped to entries in other tiers.
