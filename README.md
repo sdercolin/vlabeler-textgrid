@@ -17,10 +17,6 @@ support [TextGrid](https://www.fon.hum.uva.nl/praat/manual/TextGrid.html) files.
         - `textgrid-manage-module`: Used to manage modules (sub-projects) in the project
 - `src`: JavaScript source code for labelers. Not needed for using the labelers.
 
-## Download
-
-See [Releases](https://github.com/sdercolin/vlabeler-textgrid/releases).
-
 ## Important notes
 
 1. The labeler currently only supports the `IntervalTier` tier, so `PointTier` will be ignored and will not be exported.
@@ -30,6 +26,10 @@ See [Releases](https://github.com/sdercolin/vlabeler-textgrid/releases).
 ## Preview
 
 ![](readme/textgrid-preview.png)
+
+## Download
+
+See [Releases](https://github.com/sdercolin/vlabeler-textgrid/releases).
 
 ## Installation
 
