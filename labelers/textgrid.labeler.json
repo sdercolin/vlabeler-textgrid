@@ -1,6 +1,6 @@
 {
   "name": "textgrid",
-  "version": 1,
+  "version": 2,
   "extension": "TextGrid",
   "defaultInputFilePath": null,
   "displayedName": {
