@@ -15,7 +15,7 @@ function constructProject(params, root) {
             let tiers = []
             while (i < lines.length) {
                 let line = lines[i]
-                if (line.match(/item\s*\[\d]/)) {
+                if (line.match(/item\s*\[\d+]/)) {
                     let index = tiers.length + 1
                     i++
                     let type = lines[i].split('=')[1].trim().replace(/^"+|"+$/g, '')
@@ -68,12 +68,12 @@ function parse(sampleFileNames, inputs, params) {
     let entriesInCurrentModule = []
     while (i < lines.length) {
         let line = lines[i]
-        if (line.match(/item\s*\[\d]/)) {
+        if (line.match(/item\s*\[\d+]/)) {
             if (entriesInCurrentModule.length > 0) {
                 modules.push(entriesInCurrentModule)
                 entriesInCurrentModule = []
             }
-        } else if (line.match(/intervals\s*\[\d]/)) {
+        } else if (line.match(/intervals\s*\[\d+]/)) {
             console.log(`intervals found: ${line}`)
             i++
             let xmin = lines[i].split('=')[1].trim()
