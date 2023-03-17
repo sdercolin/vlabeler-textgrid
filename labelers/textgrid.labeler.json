@@ -1,6 +1,6 @@
 {
   "name": "textgrid",
-  "version": 2,
+  "version": 3,
   "extension": "TextGrid",
   "defaultInputFilePath": null,
   "displayedName": {
@@ -34,12 +34,24 @@
     {
       "name": "start",
       "displayedName": "Start",
-      "value": "{start}"
+      "valueGetter": [
+        "value = entry.start"
+      ],
+      "valueSetter": [
+        "entry.start = value"
+      ],
+      "shortcutIndex": 0
     },
     {
       "name": "end",
       "displayedName": "End",
-      "value": "{end}"
+      "valueGetter": [
+        "value = entry.end"
+      ],
+      "valueSetter": [
+        "entry.end = value"
+      ],
+      "shortcutIndex": 1
     }
   ],
   "parser": {
