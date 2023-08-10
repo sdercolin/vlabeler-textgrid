@@ -1,6 +1,6 @@
 {
   "name": "textgrid-merge-to-next-tier",
-  "version": 1,
+  "version": 2,
   "type": "macro",
   "displayedName": "TextGrid - Merge to update next tier",
   "author": "sdercolin",
@@ -22,7 +22,8 @@
         "name": "targetTier",
         "label": "Target tier",
         "description": "The target tier name you want to create or update",
-        "defaultValue": ""
+        "defaultValue": "",
+        "optional": true
       },
       {
         "type": "boolean",
@@ -30,6 +31,21 @@
         "label": "Force update",
         "description": "Update the target tier even if it has different content (mostly count, order and names of the entries) than the merged result. It's recommended to set this to false at first to get a report about the differences, and then set it to true if you are sure that the merged result is correct.",
         "defaultValue": false
+      },
+      {
+        "type": "boolean",
+        "name": "updateAllSamples",
+        "label": "Update all samples",
+        "description": "Update the target tiers of all samples in the project.",
+        "defaultValue": false
+      },
+      {
+        "type": "string",
+        "name": "recursiveTierUpdateHierarchy",
+        "label": "Recursive tier update hierarchy",
+        "description": "Update all existing tiers recursively. For example, if you have tiers `phoneme`, `word`, `sentence`, you can input `phoneme>word>sentence`, and the plugin will merge `phoneme` tier to `word` tier, and `word` tier to `sentence` tier. If you set this parameter, the `Target tier` parameter will be ignored.",
+        "defaultValue": "",
+        "optional": true
       }
     ]
   },
