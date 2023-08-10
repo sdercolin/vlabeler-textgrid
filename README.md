@@ -150,3 +150,4 @@ You can choose any of the following methods to export TextGrid files:
 3. You can use menu `Navigate` -> `Go to Next/Previous Sub-project` to switch between tiers. You can also set the
    keyboard shortcuts for these actions in the `Settings` -> `Preferences...` -> `Keymap` -> `Key actions` page.
 4. Dragging when multiple tiers exist will be snapped to entries in other tiers.
+5. You can use the [plugin quick launch feature](https://github.com/sdercolin/vlabeler-textgrid#tips)https://github.com/sdercolin/vlabeler-textgrid#tips to easily run plugins with a set of parameters.
