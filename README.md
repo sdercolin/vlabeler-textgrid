@@ -110,7 +110,7 @@ To do this, we can use the plugins with the following steps:
     note:     | a (a ka sa)   |  ka (a ka sa)   |   sa (a ka sa)     |
     sentence: |                     a ka sa                          |
     ```
-4. Repeat step 2 and 3 until the top tier is updated.
+4. Repeat step 2 and 3 until the top tier is updated. The `TextGrid - Merge to update next tier` plugin also have settings to allow batch process for multiple tiers and/or multiple sample files. Please check the plugin's settings for details.
 
 ## Create TextGrid files from scratch
 
