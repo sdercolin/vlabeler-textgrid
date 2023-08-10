@@ -11,6 +11,10 @@ for (let i = 0; i < tiers.length - 1; i++) {
     tierMergeMap[tiers[i]] = tiers[i + 1]
 }
 
+function getWavName(moduleName) {
+    return moduleName.split('.wav_')[0]
+}
+
 function getTierName(moduleName) {
     return moduleName.split('.wav_')[1].split('_').slice(1).join('_')
 }
@@ -35,16 +39,27 @@ function alignBoundaries(parents, children) {
     return childBoundaryIndexesAligned
 }
 
+let wavModulesMap = {}
+
+for (let module of modules) {
+    let wavName = getWavName(module.name)
+    if (!wavModulesMap[wavName]) {
+        wavModulesMap[wavName] = []
+    }
+    wavModulesMap[wavName].push(module)
+}
+
 for (let module of modules) {
     let tierName = getTierName(module.name)
-    let tierNameNext = tierMergeMap[tierName]
-    if (!tierNameNext) {
+    let wavName = getWavName(module.name)
+    let nextTierName = tierMergeMap[tierName]
+    if (!nextTierName) {
         continue
     }
+    let nextModule = wavModulesMap[wavName].find(module => getTierName(module.name) === nextTierName)
     if (debug) {
-        console.log(`Marking tier "${tierName}" from module "${module.name}" with parent tier "${tierNameNext}"`)
+        console.log(`Marking tier "${tierName}" from module "${module.name}" with parent tier "${nextTierName}" from module "${nextModule.name}"`)
     }
-    let nextModule = modules.find(module => getTierName(module.name) === tierNameNext)
 
     let parentEntries = nextModule.entries
     let childEntries = module.entries
