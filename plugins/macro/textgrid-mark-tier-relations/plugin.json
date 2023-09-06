@@ -1,6 +1,6 @@
 {
   "name": "textgrid-mark-tier-relations",
-  "version": 2,
+  "version": 3,
   "type": "macro",
   "displayedName": "TextGrid - Mark tier relations",
   "author": "sdercolin",
@@ -30,7 +30,7 @@
         "label": "Tolerance (ms)",
         "description": "Tolerance for alignment in milliseconds.",
         "defaultValue": 5,
-        "minValue": 0
+        "min": 0
       }
     ]
   },
