@@ -9,13 +9,12 @@ support [TextGrid](https://www.fon.hum.uva.nl/praat/manual/TextGrid.html) files.
 ## Contents
 
 - `labelers`
-    - `textgrid.labeler.json`: labeler for TextGrid files
+    - `textgrid-labeler`: labeler for TextGrid files
 - `plugins`
     - `macro`
         - `textgrid-mark-tier-relations`: Used to mark parent-child relations between existing tiers
         - `textgrid-merge-to-next-tier`: Used to create/update a parent tier using a child tier with relations tags
         - `textgrid-manage-module`: Used to manage modules (sub-projects) in the project
-- `src`: JavaScript source code for labelers. Not needed for using the labelers.
 
 ## Important notes
 
