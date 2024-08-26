@@ -31,12 +31,20 @@ function alignBoundaries(parents, children) {
             childIndex++
         }
         if (foundChildIndex === null) {
-            error("Could not find child boundary for parent boundary " + parent)
+            return {
+                alignedIndexes: null,
+                parent: parent,
+                childIndex: childIndex
+            }
         } else {
             childBoundaryIndexesAligned.push(foundChildIndex)
         }
     }
-    return childBoundaryIndexesAligned
+    return {
+        alignedIndexes: childBoundaryIndexesAligned,
+        parent: null,
+        childIndex: null
+    }
 }
 
 let wavModulesMap = {}
@@ -75,7 +83,14 @@ for (let module of modules) {
         console.log(`Parent boundaries: ${parentBoundaries}`)
         console.log(`Child boundaries: ${childBoundaries}`)
     }
-    let childBoundaryIndexesAligned = alignBoundaries(parentBoundaries, childBoundaries)
+    let aligned = alignBoundaries(parentBoundaries, childBoundaries)
+    let childBoundaryIndexesAligned = aligned.alignedIndexes
+    if (childBoundaryIndexesAligned == null) {
+        let childName = childEntries[aligned.childIndex-1].name
+        let parentBoundary = aligned.parent
+        let errMsg = `Could not find child boundary for parent boundary ${parentBoundary}`
+        error(`${errMsg}\nHappened in file: ${wavName}\nThe error may occur near entry: ${childName}`)
+    }
     if (debug) {
         console.log(`Child boundary indexes aligned: ${childBoundaryIndexesAligned}`)
     }
