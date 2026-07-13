@@ -1,7 +1,7 @@
 {
   "name": "textgrid",
-  "version": 6,
-  "serialVersion": 2,
+  "version": 7,
+  "serialVersion": 3,
   "singleFile": false,
   "extension": "TextGrid",
   "defaultInputFilePath": null,
@@ -114,5 +114,113 @@
   ],
   "projectConstructor": {
     "scripts": "projectConstructor.js"
+  },
+  "moduleManagement": {
+    "add": {
+      "displayedName": {
+        "en": "Add tier",
+        "zh": "添加层",
+        "ja": "ティアを追加"
+      },
+      "description": {
+        "en": "Add a new empty tier to the TextGrid file of the current tier. After the change, the tiers are sorted by name.",
+        "zh": "在当前层所属的 TextGrid 文件中添加一个新的空层。更改后，所有层将按名称排序。",
+        "ja": "現在のティアが属する TextGrid ファイルに新しい空のティアを追加します。変更後、ティアは名前順にソートされます。"
+      },
+      "parameters": [
+        {
+          "type": "string",
+          "name": "newName",
+          "label": {
+            "en": "New name",
+            "zh": "新名称",
+            "ja": "新しい名前"
+          },
+          "description": {
+            "en": "Please keep the format of the module name: <wav_file_name>_<tier_index>_<tier_name>, e.g. \"foo.wav_1_phoneme\".",
+            "zh": "请保持模块名称的格式：<wav_file_name>_<tier_index>_<tier_name>，例如 \"foo.wav_1_phoneme\"。",
+            "ja": "モジュール名の形式を保ってください：<wav_file_name>_<tier_index>_<tier_name>（例：「foo.wav_1_phoneme」）。"
+          },
+          "defaultValue": "",
+          "optional": false
+        }
+      ],
+      "scripts": "addModule.js"
+    },
+    "rename": {
+      "displayedName": {
+        "en": "Rename current tier",
+        "zh": "重命名当前层",
+        "ja": "このティアの名前を変更"
+      },
+      "description": {
+        "en": "Rename the current tier. After the change, the tiers are sorted by name.",
+        "zh": "重命名当前层。更改后，所有层将按名称排序。",
+        "ja": "現在のティアの名前を変更します。変更後、ティアは名前順にソートされます。"
+      },
+      "parameters": [
+        {
+          "type": "string",
+          "name": "newName",
+          "label": {
+            "en": "New name",
+            "zh": "新名称",
+            "ja": "新しい名前"
+          },
+          "description": {
+            "en": "Please keep the format of the module name: <wav_file_name>_<tier_index>_<tier_name>, e.g. \"foo.wav_1_phoneme\".",
+            "zh": "请保持模块名称的格式：<wav_file_name>_<tier_index>_<tier_name>，例如 \"foo.wav_1_phoneme\"。",
+            "ja": "モジュール名の形式を保ってください：<wav_file_name>_<tier_index>_<tier_name>（例：「foo.wav_1_phoneme」）。"
+          },
+          "defaultValue": "",
+          "optional": false
+        }
+      ],
+      "scripts": "renameModule.js"
+    },
+    "remove": {
+      "displayedName": {
+        "en": "Remove current tier",
+        "zh": "删除当前层",
+        "ja": "このティアを削除"
+      },
+      "description": {
+        "en": "Remove the current tier from the project. The removed tier will no longer be exported to the TextGrid file.",
+        "zh": "从项目中删除当前层。删除后的层将不再被导出到 TextGrid 文件中。",
+        "ja": "現在のティアをプロジェクトから削除します。削除されたティアは TextGrid ファイルにエクスポートされなくなります。"
+      },
+      "scripts": "removeModule.js"
+    },
+    "duplicate": {
+      "displayedName": {
+        "en": "Duplicate current tier",
+        "zh": "创建当前层的副本",
+        "ja": "このティアを複製"
+      },
+      "description": {
+        "en": "Duplicate the current tier with all its entries. After the change, the tiers are sorted by name.",
+        "zh": "创建当前层的副本（包含所有条目）。更改后，所有层将按名称排序。",
+        "ja": "現在のティアをすべてのエントリと共に複製します。変更後、ティアは名前順にソートされます。"
+      },
+      "parameters": [
+        {
+          "type": "string",
+          "name": "newName",
+          "label": {
+            "en": "New name",
+            "zh": "新名称",
+            "ja": "新しい名前"
+          },
+          "description": {
+            "en": "Please keep the format of the module name: <wav_file_name>_<tier_index>_<tier_name>, e.g. \"foo.wav_1_phoneme\".",
+            "zh": "请保持模块名称的格式：<wav_file_name>_<tier_index>_<tier_name>，例如 \"foo.wav_1_phoneme\"。",
+            "ja": "モジュール名の形式を保ってください：<wav_file_name>_<tier_index>_<tier_name>（例：「foo.wav_1_phoneme」）。"
+          },
+          "defaultValue": "",
+          "optional": false
+        }
+      ],
+      "scripts": "duplicateModule.js"
+    }
   }
 }

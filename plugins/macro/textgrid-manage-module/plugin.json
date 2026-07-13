@@ -1,11 +1,11 @@
 {
   "name": "textgrid-manage-module",
-  "version": 1,
+  "version": 2,
   "type": "macro",
   "displayedName": "TextGrid - Manage tiers",
   "author": "sdercolin",
   "email": "sder.colin@gmail.com",
-  "description": "Add, remove, duplicate, or rename tiers. After changing, the modules will be sorted by name.",
+  "description": "Add, remove, duplicate, or rename tiers. After changing, the modules will be sorted by name. Deprecated since vLabeler 1.7.0: use the built-in `File` -> `Manage Subprojects` menu instead.",
   "website": "https://github.com/sdercolin/vlabeler-textgrid",
   "supportedLabelFileExtension": "TextGrid",
   "parameters": {
