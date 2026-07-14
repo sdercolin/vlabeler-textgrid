@@ -1,6 +1,6 @@
 {
   "name": "textgrid",
-  "version": 7,
+  "version": 8,
   "serialVersion": 3,
   "singleFile": false,
   "extension": "TextGrid",
@@ -188,6 +188,11 @@
         "en": "Remove the current tier from the project. The removed tier will no longer be exported to the TextGrid file.",
         "zh": "从项目中删除当前层。删除后的层将不再被导出到 TextGrid 文件中。",
         "ja": "現在のティアをプロジェクトから削除します。削除されたティアは TextGrid ファイルにエクスポートされなくなります。"
+      },
+      "confirmation": {
+        "en": "The current tier and all its entries will be removed from the project, and it will no longer be exported to the TextGrid file. You can undo this operation before exporting. Continue?",
+        "zh": "当前层及其所有条目将从项目中删除，并且不会再被导出到 TextGrid 文件中。在导出之前，您可以撤销此操作。是否继续？",
+        "ja": "現在のティアとそのすべてのエントリはプロジェクトから削除され、TextGrid ファイルにエクスポートされなくなります。エクスポート前であればこの操作は元に戻せます。続行しますか？"
       },
       "scripts": "removeModule.js"
     },

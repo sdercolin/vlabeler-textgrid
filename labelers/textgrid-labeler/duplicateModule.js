@@ -55,6 +55,17 @@ function checkNewModuleName(newName, excludedModuleIndex) {
 
 let newName = params['newName']
 checkNewModuleName(newName, -1)
+let currentWav = modules[currentModuleIndex].name.split('.wav_')[0] + '.wav'
+let enteredWav = newName.split('.wav_')[0] + '.wav'
+if (enteredWav !== currentWav) {
+    error({
+        en: `The new name must reference the same wav file as the current tier ("${currentWav}"), ` +
+                'because the duplicated tier is added to the TextGrid file of the current tier.',
+        zh: `新名称必须引用与当前层相同的 wav 文件（"${currentWav}"），因为副本层将被添加到当前层所属的 TextGrid 文件中。`,
+        ja: `新しい名前は、現在のティアと同じ wav ファイル（「${currentWav}」）を参照する必要があります。` +
+                '複製されたティアは現在のティアの TextGrid ファイルに追加されるためです。'
+    })
+}
 
 let duplicated = JSON.parse(JSON.stringify(modules[currentModuleIndex]))
 duplicated.name = newName
