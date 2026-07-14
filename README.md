@@ -6,6 +6,8 @@ support [TextGrid](https://www.fon.hum.uva.nl/praat/manual/TextGrid.html) files.
 ## Requirements
 `vLabeler` 1.0.0-beta20 or later.
 
+The built-in tier management menu (`File` -> `Manage Subprojects`) requires `vLabeler` 1.7.0-beta1 or later.
+
 ## Contents
 
 - `labelers`
@@ -14,7 +16,9 @@ support [TextGrid](https://www.fon.hum.uva.nl/praat/manual/TextGrid.html) files.
     - `macro`
         - `textgrid-mark-tier-relations`: Used to mark parent-child relations between existing tiers
         - `textgrid-merge-to-next-tier`: Used to create/update a parent tier using a child tier with relations tags
-        - `textgrid-manage-module`: Used to manage modules (sub-projects) in the project
+        - `textgrid-manage-module`: (Deprecated) Used to manage modules (sub-projects) in the project. Since
+          `vLabeler` 1.7.0, the labeler provides the same features via the built-in `File` -> `Manage Subprojects`
+          menu. The plugin is kept for older `vLabeler` versions.
 
 ## Important notes
 
@@ -120,16 +124,17 @@ If we want to create TextGrid files from scratch, we get a empty project includi
 - file2.wav_1_default
 ```
 
-`default` is a default tier name. We can rename it by the `TextGrid - Manage module` plugin.
+`default` is a default tier name. We can rename it by the menu `File` -> `Manage Subprojects` -> `Rename current tier`
+(or by the `TextGrid - Manage module` plugin on `vLabeler` versions older than 1.7.0).
 
 If we want to create tiers with parent-child relations, we can do the same steps 2 and 3 as the previous section.
 
 Note that the plugin `TextGrid - Merge to update next tier` will create a new tier if the given next tier doesn't exist,
 so you don't need to create the next tier manually.
 
-You can add, remove, rename and duplicate modules by the `TextGrid - Manage module` plugin as you like, but please note
-that the plugin doesn't block all the possible errors, so you will need to double-check the module names before running
-other plugins or export.
+You can add, remove, rename and duplicate modules by the menu `File` -> `Manage Subprojects` as you like (on `vLabeler`
+versions older than 1.7.0, use the `TextGrid - Manage module` plugin instead), but please note that not all the
+possible errors are blocked, so you will need to double-check the module names before running other plugins or export.
 
 ## Export TextGrid files
 
